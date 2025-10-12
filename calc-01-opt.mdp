@@ -1,0 +1,32 @@
+
+integrator                = steep
+emtol                     = 1.0
+emstep                    = 0.01
+nsteps                    = 5000
+
+nstxout                   = 100
+nstlog                    = 100
+nstenergy                 = 1
+nstcalcenergy             = 1
+
+cutoff-scheme             = Verlet
+nstlist                   = 10
+nstcalclr                 = 1
+pbc                       = xyz
+periodic_molecules        = no
+rlist                     = 1.2
+
+coulombtype               = PME
+pme-order                 = 4
+fourier-spacing           = 0.15
+r_coulomb                 = 1.20
+ewald_rtol                = 1e-06
+ewald_geometry            = 3D
+
+vdwtype                   = cut-off
+vdw-modifier              = potential-switch
+rvdw-switch               = 1.10
+rvdw                      = 1.20
+
+constraints               = none
+

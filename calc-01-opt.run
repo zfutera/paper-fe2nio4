@@ -1,0 +1,41 @@
+#!/bin/bash
+
+NAME="calc-01-opt"
+
+TOP="parameters.top"
+GRO="parameters.gro"
+
+################################################################################
+
+module load gromacs
+
+rm -f ${NAME}.tpr
+
+gmx grompp \
+  --maxwarn 1 \
+  -p $TOP -c $GRO \
+  -f ${NAME}.mdp \
+  -o ${NAME}.tpr
+
+rm -f mdout.mdp
+
+if [ ! -f ${NAME}.tpr ]; then
+  printf "Error: cannot create ${NAME}.tpr file!\n"; exit 1; fi
+
+#------------------------------------------------------------------------------#
+
+rm -f ${NAME}.{cpt,edr,gro,log,trr}
+
+gmx mdrun \
+  -cpo ${NAME}.cpt \
+  -s   ${NAME}.tpr \
+  -c   ${NAME}.gro \
+  -e   ${NAME}.edr \
+  -g   ${NAME}.log \
+  -x   ${NAME}.xtc \
+  -o   ${NAME}.trr > ${NAME}.out 2>&1
+
+if [ -f ${NAME}.gro ]; then
+  gro2xyz ${NAME}.gro -o ${NAME}.xyz; fi
+
+################################################################################

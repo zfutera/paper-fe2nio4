@@ -1,0 +1,31 @@
+                      :-) GROMACS - gmx mdrun, 2025.1 (-:
+
+Executable:   /opt/modules/software/gromacs/2025.1/bin/gmx
+Data prefix:  /opt/modules/software/gromacs/2025.1
+Working dir:  /home/futera/Documents/2025-nife2o4-params
+Command line:
+  gmx mdrun -cpo calc-01-opt.cpt -s calc-01-opt.tpr -c calc-01-opt.gro -e calc-01-opt.edr -g calc-01-opt.log -x calc-01-opt.xtc -o calc-01-opt.trr
+
+Reading file calc-01-opt.tpr, VERSION 2025.1 (single precision)
+
+NOTE: Parallelization is limited by the small number of atoms,
+      only starting 1 thread-MPI ranks.
+      You can use the -nt and/or -ntmpi option to optimize the number of threads.
+
+Using 1 MPI thread
+Using 8 OpenMP threads 
+
+
+Steepest Descents:
+   Tolerance (Fmax)   =  1.00000e+00
+   Number of steps    =         5000
+
+writing lowest energy coordinates.
+
+Steepest Descents converged to Fmax < 1 in 636 steps
+Potential Energy  = -3.4318866e+02
+Maximum force     =  9.8169315e-01 on atom 40
+Norm of force     =  3.2548781e-01
+
+GROMACS reminds you: "My Head Goes Pop Pop Pop Pop Pop" (F. Black)
+
