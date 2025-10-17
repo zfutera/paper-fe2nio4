@@ -7,5 +7,5 @@ $HOME/program/software/mol-prop/bin/solid-params \
   -c ${NAME}.gro \
   -p ${NAME}.pdb \
   -t ${NAME}.top \
-  sphere.xyz > ${NAME}.log
+  sphere.xyz #> ${NAME}.log
 

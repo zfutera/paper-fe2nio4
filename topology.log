@@ -1,0 +1,58 @@
+Number of atoms:            63
+Number of elements:          3
+Number of types:             9
+
+Atom type "O1"
+ - number of bond types:     2
+ - number of bonds:          4
+   Fe      3.867      2
+   O       5.254      2
+
+Atom type "O2"
+ - number of bond types:     2
+ - number of bonds:          6
+   Fe      3.867      3
+   O       5.254      3
+
+Atom type "O3"
+ - number of bond types:     2
+ - number of bonds:          2
+   Ni      3.722      1
+   Fe      3.867      1
+
+Atom type "O4"
+ - number of bond types:     3
+ - number of bonds:          6
+   Ni      3.722      1
+   Fe      3.867      3
+   O       5.254      2
+
+Atom type "O5"
+ - number of bond types:     3
+ - number of bonds:          7
+   Ni      3.722      1
+   Fe      3.867      3
+   O       5.254      3
+
+Atom type "Fe1"
+ - number of bond types:     2
+ - number of bonds:          5
+   O       3.867      3
+   Fe      5.666      2
+
+Atom type "Fe2"
+ - number of bond types:     2
+ - number of bonds:         11
+   O       3.867      6
+   Fe      5.666      5
+
+Atom type "Fe3"
+ - number of bond types:     2
+ - number of bonds:         12
+   O       3.867      6
+   Fe      5.666      6
+
+Atom type "Ni1"
+ - number of bond types:     1
+ - number of bonds:          4
+   O       3.722      4
