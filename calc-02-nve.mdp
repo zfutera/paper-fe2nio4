@@ -1,0 +1,41 @@
+
+integrator                = md
+dt                        = 0.001
+nsteps                    = 10000
+
+nstxout                   = 100
+nstlog                    = 100
+nstenergy                 = 10
+nstcalcenergy             = 10
+
+cutoff-scheme             = Verlet
+nstlist                   = 10
+nstcalclr                 = 1
+pbc                       = xyz
+periodic_molecules        = no
+rlist                     = 1.2
+
+coulombtype               = PME
+pme-order                 = 4
+fourier-spacing           = 0.15
+r_coulomb                 = 1.20
+ewald_rtol                = 1e-06
+ewald_geometry            = 3D
+
+vdwtype                   = cut-off
+vdw-modifier              = potential-switch
+rvdw-switch               = 1.10
+rvdw                      = 1.20
+
+gen-vel                   = yes
+gen-temp                  = 300.0
+gen-seed                  = -1
+
+tcoupl                    = no
+
+pcoupl                    = no
+
+constraints               = none
+
+comm-mode                 = linear
+nstcomm                   = 100

@@ -1,0 +1,56 @@
+#!gnuplot
+################################################################################
+fl = "calc-02-nve"
+se = 1.0 # kJ/mol
+st = 1.0 # K
+################################################################################
+fig_size_x=600
+fig_size_y=600
+plt_num_x=1
+plt_num_y=2
+plt_off_x0=12.0
+plt_off_x1=2.0
+plt_off_y0=9.0
+plt_off_y1=2.0
+plt_sep_x=1.0
+plt_sep_y=1.0
+plt_size_x=(100.0-plt_off_x0-plt_off_x1-((plt_num_x-1)*plt_sep_x))/plt_num_x
+plt_size_y=(100.0-plt_off_y0-plt_off_y1-((plt_num_y-1)*plt_sep_y))/plt_num_y
+################################################################################
+set terminal pngcairo transparent truecolor enhanced size fig_size_x,fig_size_y\
+    background rgb 'white' dashed font "Helvetica, 12"
+set encoding iso_8859_1
+set output fl.".png"
+set multiplot
+set size plt_size_x/100,plt_size_y/100
+################################################################################
+set tmargin 0
+set bmargin 0
+set lmargin 0
+set rmargin 0
+################################################################################
+set key inside horizontal top right Left
+################################################################################
+set origin (plt_off_x0+0*(plt_size_x+plt_sep_x))/100,\
+           (plt_off_y0+1*(plt_size_y+plt_sep_y))/100
+set xlabel ""
+set ylabel "Energy [MJ/mol]"
+set format x ""
+set format y "%4.0f"
+set yrange [*:*]
+plot \
+  fl.".xvg" index 0 u 1:($2*se) w l lt 1 lw 1 lc rgb "#006900" title "E_{pot}",\
+  fl.".xvg" index 0 u 1:($3*se) w l lt 1 lw 1 lc rgb "#ffaa00" title "E_{tot}",\
+################################################################################
+set origin (plt_off_x0+0*(plt_size_x+plt_sep_x))/100,\
+           (plt_off_y0+0*(plt_size_y+plt_sep_y))/100
+set xlabel "Time [ps]"
+set ylabel "Temperature [K]"
+set format x "%g"
+set format y "%4.0f"
+set yrange [*:*]
+plot \
+  fl.".xvg" index 0 u 1:($4*st) w l lt 1 lw 1 lc rgb "#0000ff" title "T_{tot}"
+################################################################################
+set nomultiplot
+quit

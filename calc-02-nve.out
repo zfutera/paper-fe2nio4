@@ -1,0 +1,30 @@
+                      :-) GROMACS - gmx mdrun, 2025.1 (-:
+
+Executable:   /opt/modules/software/gromacs/2025.1/bin/gmx
+Data prefix:  /opt/modules/software/gromacs/2025.1
+Working dir:  /home/futera/Documents/2025-nife2o4-params
+Command line:
+  gmx mdrun -cpo calc-02-nve.cpt -s calc-02-nve.tpr -c calc-02-nve.gro -e calc-02-nve.edr -g calc-02-nve.log -x calc-02-nve.xtc -o calc-02-nve.trr
+
+Reading file calc-02-nve.tpr, VERSION 2025.1 (single precision)
+
+NOTE: Parallelization is limited by the small number of atoms,
+      only starting 1 thread-MPI ranks.
+      You can use the -nt and/or -ntmpi option to optimize the number of threads.
+
+Can not increase nstlist because an NVE ensemble is used
+Using 1 MPI thread
+Using 8 OpenMP threads 
+
+starting mdrun 'Solid particle'
+10000 steps,     10.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:        4.139        0.517      800.0
+                 (ns/day)    (hour/ns)
+Performance:     1670.258        0.014
+
+GROMACS reminds you: "You Can Be Too Early, You Can Be Too Late and You Can Be On Time" (J. Cruijff)
+

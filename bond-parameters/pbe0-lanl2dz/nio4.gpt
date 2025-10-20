@@ -1,0 +1,35 @@
+#!gnuplot
+################################################################################
+f0 = "nio4-q0-scan.dat"
+f1 = "nio4-q2-scan.dat"
+f2 = "nio4-q4-scan.dat"
+f3 = "nio4-q6-scan.dat"
+t0 = "0"
+t1 = "-2"
+t2 = "-4"
+t3 = "-6"
+c0 = "#000000"
+c1 = "#ff0000"
+c2 = "#006900"
+c3 = "#0000ff"
+sc_r = 1.0
+sc_e = 1.0
+################################################################################
+set terminal pngcairo transparent truecolor enhanced \
+    background rgb 'white' dashed font "Helvetica, 10" \
+    size 600,400
+set encoding iso_8859_1
+set output "nio4.png"
+################################################################################
+set key inside vertical top left Right
+set xlabel "Distance [A]" font "Helvetica, 12"
+set ylabel "Energy [H]" font "Helvetica, 12"
+set format x "%g"
+set format y "%4.1f"
+plot \
+  f0 u (sc_r*$2):(sc_e*$3) w l lt 1 lw 1 lc rgb c0 title t0,\
+  f1 u (sc_r*$2):(sc_e*$3) w l lt 1 lw 1 lc rgb c1 title t1,\
+  f2 u (sc_r*$2):(sc_e*$3) w l lt 1 lw 1 lc rgb c2 title t2,\
+  f3 u (sc_r*$2):(sc_e*$3) w l lt 1 lw 1 lc rgb c3 title t3
+################################################################################
+quit

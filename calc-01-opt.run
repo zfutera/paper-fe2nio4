@@ -2,8 +2,8 @@
 
 NAME="calc-01-opt"
 
-TOP="parameters.top"
-GRO="parameters.gro"
+TOP="topology.top"
+GRO="topology.gro"
 
 ################################################################################
 
@@ -12,7 +12,6 @@ module load gromacs
 rm -f ${NAME}.tpr
 
 gmx grompp \
-  --maxwarn 1 \
   -p $TOP -c $GRO \
   -f ${NAME}.mdp \
   -o ${NAME}.tpr
